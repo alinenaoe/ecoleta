@@ -1,21 +1,15 @@
-import express from 'express'; //para gerenciar rotas
+import express from 'express'; 
+import cors from 'cors';
+import path from 'path';
+import routes from './routes';
 
 const app = express();
 
-app.get('/users', (request, response) => {
-    console.log('Listagem de usuários');
+app.use(cors());
+app.use(express.json());
+app.use(routes);
 
-    // response.send("Hello world!");
-    response.json(
-        [
-            'User 1',
-            'User 2',
-            'User 3',
-            'User 4',
-            'User 5',
-            'User 6'
-        ]);
-});
+app.use('/uploads', express.static(path.resolve(__dirname, '..', 'uploads')));
 
-app.listen(3333); //indica a porta onde vai rodar a aplicação
+app.listen(3333); 
 

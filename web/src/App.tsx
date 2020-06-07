@@ -1,26 +1,23 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import Routes from './routes';
+// import Home from './pages/Home';   //com as rotas não precisa mais importar o home desta maneira
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Routes />
   );
 }
 
 export default App;
+
+  
+  // const [counter, setCounter] = useState(0);   //exemplo de uso de state. lembrar de importar o useState
+
+  // function handleButtonClick() {
+  //   setCounter(counter + 1);
+  // }
+
+  // no return      
+  /* <h1>{ counter }</h1>
+  <button onClick={handleButtonClick}>Somar um</button> */
